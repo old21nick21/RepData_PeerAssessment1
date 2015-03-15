@@ -1,0 +1,28 @@
+---
+title: "Reproducible Research Peer Assessment 1"
+author: "Vira Yakusha"
+date: "Saturday, March 14, 2015"
+output: html_document
+    keep_md: true
+---
+
+## This is a markdown document for the Peer Assessment 1 
+## of the Reproducible Research Coursera repdata-012
+
+## Loading and preprocessing the data
+
+
+
+## What is mean total number of steps taken per day?
+
+
+
+## What is the average daily activity pattern?
+
+
+
+## Imputing missing values
+
+
+
+## Are there differences in activity patterns between weekdays and weekends?
