@@ -153,11 +153,13 @@ full_data$weekend[weekdays(full_data$date) %in% c("Saturday","Sunday")] <- "week
 full_data$weekend <- as.factor(full_data$weekend)
 
 str(full_data)
+```
 
-two_types_data <- full_data %.% group_by(interval, weekend) %.% summarize(avgsteps = mean(steps))
+b. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+
+```{r}
+two_types_data <- full_data %>% group_by(interval, weekend) %>% summarize(avgsteps = mean(steps))
 
 str(two_types_data)
 qplot(x = interval, y = avgsteps, data = two_types_data, geom = c("line"), facets = weekend~., ylab = "Average number of Steps")
 ```
-
-b. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.

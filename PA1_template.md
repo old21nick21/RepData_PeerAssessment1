@@ -224,19 +224,12 @@ str(full_data)
 ##  $ weekend : Factor w/ 2 levels "weekday","weekend": 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
-```r
-two_types_data <- full_data %.% group_by(interval, weekend) %.% summarize(avgsteps = mean(steps))
-```
+b. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-```
-## Warning: %.% is deprecated. Please use %>%
-```
-
-```
-## Warning: %.% is deprecated. Please use %>%
-```
 
 ```r
+two_types_data <- full_data %>% group_by(interval, weekend) %>% summarize(avgsteps = mean(steps))
+
 str(two_types_data)
 ```
 
@@ -259,6 +252,4 @@ qplot(x = interval, y = avgsteps, data = two_types_data, geom = c("line"), facet
 ## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
-
-b. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
